@@ -99,7 +99,7 @@ Sequences nodes are roughly equivalent to a `map` over a sequential value. They 
 ;; Env with sequence
 (def my-env
   {:a (nodely/>value [1 2 3])
-   :b (nodely/>sequence ?a (fn [each] (inc each)))})
+   :b (nodely/>sequence (fn [each] (inc each)) ?a)})
 (nodely/eval-key my-env :b)
 ;; => [2 3 4]
 ```
